@@ -1,0 +1,108 @@
+
+
+@font-face {
+    font-family: 'Abel';
+    src: url(/fonts/Abel/Abel-Regular.ttf);
+}
+* {margin: 0;
+    border: 0;
+    font-family:Abel;
+    font-weight: normal;
+    font-style: normal;
+}
+#rpm{
+    
+
+    padding: 0.25rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+}
+#rpm #rpmgauge{
+    width: 80%;
+    height: 100%;
+    
+    background-color: rgb(0, 0, 0);
+}
+
+#rpm #rpmgauge #shiftbar{
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem;
+    margin-top: 0.25rem;
+    margin-left: 0.25rem;
+    width: 70%;
+    height: 100%;
+    background-image: linear-gradient(to left, yellow, red);
+    text-align: right;
+    color: black;
+    font-style: italic;
+    position: relative;
+    z-index: 10;
+}
+
+#rpm #rpmgauge #scale {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    position: relative;
+    top: -0.5rem;
+
+}
+
+#rpm #rpmgauge #scale #step{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    
+}
+#rpm #rpmgauge #scale #step span{
+    height: 10px;
+    width: 100%;
+
+    border-bottom: 2px;
+    border-left: 2px;
+    border-right: 1px;
+    border-style: solid;
+    border-color: white; 
+    font-size: 10pt;
+
+}
+
+#rpm #rpmgauge #scale #step .redline{
+
+    border-color:red;
+    
+}
+
+#rpm #rpmgauge #scale #values{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 10pt;
+    color:white;
+    
+}
+
+#rpm #rpmgauge #scale #values .redline{
+
+    color:red;
+    
+}
+
+#rpm #rpmgauge #scale #values span{
+    width: 100%;
+    text-align: right;
+    border-bottom: 2px;
+    border-left: 1px;
+    border-right: 1px;
+    font-size: 10pt;
+
+}
+#rpm #rpmcounter{
+    text-align: right;
+}
