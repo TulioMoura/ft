@@ -17,4 +17,12 @@ console.log(turn_angle*i)
 }
 }
 
+function updateRpmBar(rpm){
+    barPercent = 99/10000 * rpm
+    rpmValue = document.getElementById("rpmcounter").getElementsByTagName("h1")[0]
+    rpmValue.innerHTML = rpm
+    document.getElementById("shiftbar").setAttribute("style",`width:${barPercent}%;`)
+}
+
+updateRpmBar(10000)
 updateSpeedGauge(152)
