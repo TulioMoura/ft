@@ -9,6 +9,8 @@
 </head>
 <body>
     <!-- criar a shiftbar e o rpm counter -->
+    <div id="top">
+        
     <div id="rpm">
             <div id="rpmgauge">
                     <div id="shiftbar">
@@ -50,8 +52,10 @@
             </div>
         
     </div>
-
-    <div id="tps">
+    </div>
+    <div id="bottom">
+        <div id="left">
+        <div id="tps">
         <div id="tpsbar">
             <div id="scale">
                 <div id="tophalf">&nbsp</div>
@@ -60,12 +64,32 @@
             <div id="tpsmeter"></div>
         </div>
         <div id="value">
-            <div id="percent"> 100%</div>
+            <div id="tpsBarPercent"> 100%</div>
             TPS
         </div>
         
     </div>
+    </div>
+    <div id="center">
+        <div id="timing"> timing <div id="timingValue">8:88,88</div></div>
+        <div id="delta">delta <div class="splitter"></div><div id="deltaValue">+0,23</div> </div>
+        <div id="last">last  <div id="lastLapValue">8:88,88</div></div>
+        <div id="best">best <div id="bestLapValue">8:88,88</div></div>
+        <div id="gear">gear <div class="splitter"></div> <div id="gearValue">6</div></div>
+    </div>
 
+    <div id="rigth">
+        <div id="velocity">
+        <img src="/img/bt_blue.png"  class="gauge move">
+        <img src="/img/bt_blue.png"  class="gauge move">
+        <img src="/img/bt_blue.png"  class="gauge move">
+        <img src="/img/bt_black2.png"  class="gauge ">
+        <div id="value">
+            <h1>122</h1>
+        <h3>km/h</h3>
+        </div>
+        
+    </div>
     <div id="velocity">
         <img src="/img/bt_blue.png"  class="gauge move">
         <img src="/img/bt_blue.png"  class="gauge move">
@@ -77,6 +101,10 @@
         </div>
         
     </div>
+    </div>
+    </div>
+    
+    
     <script src="velocity.js"></script>
     
     

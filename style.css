@@ -9,9 +9,96 @@
        
 
 }
-#rpm{
-    
 
+#bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#left{
+    width: 8vw;
+}
+#center{
+    width: 64vw;
+    height: 24vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1.5fr 1fr 1fr;
+    background-color: black;
+    color:white;
+    font-size: 2.5vw;
+}
+
+#center *{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Abel;
+}
+#center #timingValue{
+    font-size: 6vw;
+}
+#center #timing{
+    padding: 1vw;
+    border: solid white 0.25vw;
+    margin: 0.5vw;
+}
+#center #last{
+    padding: 0.5vw;
+    border: solid white 0.25vw;
+    margin: 0.5vw;
+}
+
+#center #best{
+    padding: 0.5vw;
+    border: solid white 0.25vw;
+    margin: 0.5vw;
+}
+#center #delta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5vw;
+    border: solid white 0.25vw;
+    margin: 0.5vw;
+}
+
+.splitter{
+    height: 0.5vw;
+    width: 10vw;
+    background-color: white;
+    border: none;
+}
+
+#center #delta #deltaValue{
+    color: red;
+    font-size: 6vw;
+}
+
+#center #gear{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5vw;
+    border: solid white 0.25vw;
+    margin: 0.5vw;
+}
+
+
+
+#center #gear #gearValue{
+    color: white;
+    font-size: 10vw;
+}
+
+
+#rigth{
+    width: 28vw;
+    background-color: black;
+    
+}
+#rpm{
     padding: 0.25rem;
     display: flex;
     flex-direction: row;
@@ -110,7 +197,8 @@
     font-family:Abel;
 }
 #velocity{
-
+    position: absolute;
+    right: 0px;
 }
 
 #velocity .gauge{
@@ -126,11 +214,13 @@
     color: blue;
 }
 #velocity{
+    overflow: hidden;
     background-color: black;
     color: white;
     height: 20vw;
     width: 20vw;
     position: relative;
+    margin-left: 2vw;
 }
 
 #velocity #value{
@@ -144,7 +234,7 @@
 }
 #tps{
     background-color: black;
-    width: 10vw;
+    width: 8vw;
     height: 35vw;
 }
 #tps #tpsbar{
@@ -167,14 +257,12 @@
     border-left: 1px;
     border-style: solid;
     border-color: white;
-    
 }
 #tps #tpsbar #tpsmeter{
     position: absolute;
     bottom: 0.5vw;
     left: 2vw;
     width: 5vw;
-    height: 96%;
     margin-top:0.5vw;
     background-color: white;
 }
@@ -183,6 +271,25 @@
     font-family: Abel;
     font-size: 2vw;
 }
-#tps #value #percent{
+#tps #value #tpsBarPercent{
     font-size: 3vw;
+}
+
+#bottom #center #gear{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+#bottom #center #timing{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+#bottom #center #delta{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 4;
 }
