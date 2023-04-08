@@ -6,8 +6,12 @@
 }
 * {margin: 0;
     border: 0;
-       
+    
 
+}
+
+body{
+    background-color: black;
 }
 
 #bottom{
@@ -118,8 +122,6 @@
     padding-bottom: 0.125rem;
     margin-top: 0.25rem;
     margin-left: 0.25rem;
-    width: 70%;
-    height: 100%;
     background-image: linear-gradient(to left, yellow, yellow);
     text-align: right;
     color: black;
@@ -199,6 +201,13 @@
 #velocity{
     position: absolute;
     right: 0px;
+    overflow: hidden;
+    background-color: black;
+    color: white;
+    height: 20vw;
+    width: 20vw;
+    position: relative;
+    margin-left: 2vw;
 }
 
 #velocity .gauge{
@@ -213,15 +222,7 @@
 #velocity .move{
     color: blue;
 }
-#velocity{
-    overflow: hidden;
-    background-color: black;
-    color: white;
-    height: 20vw;
-    width: 20vw;
-    position: relative;
-    margin-left: 2vw;
-}
+
 
 #velocity #value{
     font-family: Abel;
@@ -231,6 +232,39 @@
     left: 7vw;
     width: 50px;
     height: 50px;
+}
+#engineTemp{
+    position:absolute;
+    overflow: hidden;
+    background-color: black;
+    color: white;
+    height: 20vw;
+    width: 20vw;
+    position: relative;
+    margin-left: 2vw;
+}
+
+
+#engineTemp #value{
+    font-family: Abel;
+    font-size: 2vw;
+    position:absolute;
+    top: 7vw;
+    left: 7vw;
+    width: 50px;
+    height: 50px;
+}
+
+#engineTemp .gauge{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20vw;
+    height: 20vw;
+}
+#engineTemp .move{
+    color: red;
+
 }
 #tps{
     background-color: black;

@@ -16,6 +16,24 @@ function updateSpeedGauge(speed) {
         velocity_gauge_bar[i - 1].setAttribute("style", `transform: rotateZ(${turn_angle * i}deg);`)
     }
 }
+function updateEngineTempGauge(speed) {
+    if (typeof (speed) != 'number') {
+        return ("Invalid parameter Value")
+    } temperature_gauge = document.getElementById("engineTemp")
+    temperature_gauge.getElementsByTagName("h1")[0].innerText = speed
+
+    temperature_range = 120 //max speed
+    if (speed > temperature_range) {
+        speed = temperature_range;
+    }
+    step = 90 / (temperature_range/3) //size of each step image
+    turn_angle = step * speed / 3 //angle to turn in each image to get expected fill of bar
+
+    temperature_gauge_bar = temperature_gauge.getElementsByClassName("move")
+    for (let i = 1; i <= 3; i++) {
+        temperature_gauge_bar[i - 1].setAttribute("style", `transform: rotateZ(${turn_angle * i}deg);`)
+    }
+}
 
 function updateRpmBar(rpm) {
     if (typeof (rpm) != 'number') {
@@ -35,24 +53,26 @@ function updateTpsBar(tps) {
     tpsmeter = document.getElementById("tpsmeter")
     tpsmeter.setAttribute("style", `height:${barPercent}%;`)
     tpsValueField = document.getElementById("tpsBarPercent")
-    tpsValueField.innerText = tps;
+    tpsValueField.innerText = (tps+"%");
 }
 
 
 function tofullthrottle(){
     tpsValueField = document.getElementById("tpsBarPercent")
-    tps = Number( tpsValueField.innerText)
+    tps = tpsValueField.innerText
+    tps = tps.replace('%','');
     tps++;
     if(tps>100){
         tps = 0;
     }
-    console.log("running" + tps)
-    console.log(updateTpsBar(tps))
+    updateTpsBar(tps)
     
 }
+
 
 //setInterval(tofullthrottle,50)
 
 updateTpsBar(75)
 updateRpmBar(10000)
 updateSpeedGauge(152)
+updateEngineTempGauge(98)
