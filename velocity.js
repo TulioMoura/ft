@@ -69,9 +69,44 @@ function tofullthrottle(){
     
 }
 
+function updateLambdaValue(lambda){
+    meter = document.getElementById("lambda")
+    max_limit = 1.10
+    min_limit = 0.5
+    range = max_limit - min_limit;
+    step = range/5;
+    console.log(step)
+    if(lambda > max_limit && lambda < min_limit){
+        return("Out Of Range")
+    }
+    else{
+        if(lambda < min_limit + step){
+            meter.setAttribute("style", "background-image:url('/img/lambda0.png');")
+            console.log(step)
+        }
+        else if((lambda < (min_limit + (step * 2))) && (lambda > (min_limit + step))){
+            meter.setAttribute("style", "background-image:url('/img/lambda1.png');")
+            console.log(step)
+        }
+        else if((lambda < (min_limit + (step * 3))) && (lambda > (min_limit + (step * 2)))){
+            meter.setAttribute("style", "background-image:url('/img/lambda2.png');")
+            console.log(step)
+        }
+        else if((lambda < (min_limit + (step * 4))) && (lambda > (min_limit + (step * 3)))){
+            meter.setAttribute("style", "background-image:url('/img/lambda3.png');")
+            console.log(step)
+        }
+        else if(lambda > (min_limit +(step*4))){
+            meter.setAttribute("style", "background-image:url('/img/lambda4.png');")
+            console.log(step)
+        }
+        console.log(lambda)
+        document.getElementById("LambdaValueField").innerText = lambda;
+    }
+}
 
 //setInterval(tofullthrottle,50)
-
+updateLambdaValue(0.75)
 updateTpsBar(75)
 updateRpmBar(10000)
 updateSpeedGauge(152)
