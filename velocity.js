@@ -116,14 +116,18 @@ function updateOilPressure(pressure){
     container = document.getElementById("oilPressure")
     bar = document.getElementById("oilPressureBar")
     value = document.getElementById("oilValue")
+    warning = document.getElementById("oilPressureWarning")
     field.innerText = pressure;
     console.log(perc)
     if(perc < 20 || perc > 90 ){
-        console.log(perc)
+        
         bar.setAttribute("style", ` width: ${perc}%; background-color: #ff0000; `)
+        warning.setAttribute("style","display:block;")
         value.setAttribute("class","warning")
     }
     else{
+        
+        warning.setAttribute("style","display:none;")
         bar.setAttribute("style", `width: ${perc}%;`)
     }
 }
