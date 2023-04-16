@@ -105,7 +105,57 @@ function updateLambdaValue(lambda){
     }
 }
 
-//setInterval(tofullthrottle,50)
+function updateOilPressure(pressure){
+    max_limit = 400
+    min_limit = 0
+    if(pressure > max_limit && pressure < min_limit){
+        return ("out of range")
+    }
+    perc  =((100/( max_limit - min_limit ) ) * pressure)
+    field = document.getElementById("oilPressureValue")
+    container = document.getElementById("oilPressure")
+    bar = document.getElementById("oilPressureBar")
+    value = document.getElementById("oilValue")
+    field.innerText = pressure;
+    console.log(perc)
+    if(perc < 20 || perc > 90 ){
+        console.log(perc)
+        bar.setAttribute("style", ` width: ${perc}%; background-color: #ff0000; `)
+        value.setAttribute("class","warning")
+    }
+    else{
+        bar.setAttribute("style", `width: ${perc}%;`)
+    }
+}
+
+function updateFuelQtd(qtd,consumption){
+    max_limit = 60
+    min_limit = 0
+    if(qtd > max_limit && qtd < min_limit){
+        return ("out of range")
+    }
+    perc  =((100/( max_limit - min_limit ) ) * qtd)
+    field = document.getElementById("fuelqtdValue")
+    container = document.getElementById("fuelqtd")
+    bar = document.getElementById("fuelqtdBar")
+    
+    value = document.getElementById("fuelValue")
+
+    field.innerText = Math.floor(qtd * consumption)
+    console.log(perc)
+    if(perc < 10 ){
+        bar.setAttribute("style", ` width: ${perc}%; background-color: #ff0000; `)
+        value.setAttribute("class","warning")
+    }
+    else{
+        
+    bar.setAttribute("style", `width: ${perc}%;`)
+    }
+}
+
+//setInterval(tofullthrottle,50)]
+updateFuelQtd(4,11.4)
+updateOilPressure(400)
 updateLambdaValue(0.75)
 updateTpsBar(75)
 updateRpmBar(10000)
