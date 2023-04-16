@@ -4,109 +4,26 @@
     font-family: 'Abel';
     src: url(/fonts/Abel/Abel-Regular.ttf);
 }
+
+
 * {
     margin: 0;
     border: 0;
 }
 
+
+
 body{
     background-color: black;
-}
-
-#bottom{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-#left{
-    width: 8vw;
-}
-
-
-#center *{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    font-family: Abel;
-}
-#center{
-    width: 64vw;
-    height: 40vw;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 10vw 1fr 1fr 1.5fr 1.5fr;
-    background-color: black;
-    color:white;
-    font-size: 2.5vw;
-}
-#center #timingValue{
-    font-size: 6vw;
-}
-#center #timing{
-    
-    padding: 1vw;
-    border: solid white 0.25vw;
-    margin: 0.5vw;
-}
-#center #last{
-    padding: 0.5vw;
-    border: solid white 0.25vw;
-    margin: 0.5vw;
-    grid-column:2 /3 ;
-    grid-row: 2/ 3;
-}
-
-#center #best{
-    padding: 0.5vw;
-    border: solid white 0.25vw;
-    margin: 0.5vw;
-    grid-column: 2/ 3;
-    grid-row: 3/ 4;
-}
-#center #delta{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0.5vw;
-    border: solid white 0.25vw;
-    margin: 0.5vw;
-}
-
-.splitter{
-    height: 0.5vw;
-    width: 10vw;
-    background-color: white;
-    border: none;
-}
-
-#center #delta #deltaValue{
-    color: red;
-    font-size: 6vw;
-}
-
-#center #gear{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0.5vw;
-    border: solid white 0.25vw;
-    margin: 0.5vw;
-}
-
-
-
-#center #gear #gearValue{
     color: white;
-    font-size: 10vw;
+    grid-template-columns: 10% 30% 30% 25% 25%;
+    grid-template-rows: 20% 15% 17.5% 17.5% 7.5% 7.5% 15%;
 }
 
 
-#rigth{
-    width: 28vw;
-    background-color: black;
-    
-}
+/* rpm bar styles */
+
 #rpm{
     padding: 0.25rem;
     display: flex;
@@ -114,6 +31,8 @@ body{
     justify-content: space-between;
     background-color: black;
     color: white;
+    grid-column: 1/6;
+    grid-row: 1/2;
 }
 #rpm #rpmgauge{
     width: 80%;
@@ -203,78 +122,19 @@ body{
     text-align: right;
     font-family:Abel;
 }
-#velocity{
-    position: absolute;
-    right: 0px;
-    overflow: hidden;
-    background-color: black;
-    color: white;
-    height: 20vw;
-    width: 20vw;
-    position: relative;
-    margin-left: 2vw;
-}
 
-#velocity .gauge{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 20vw;
-    height: 20vw;
-
-}
-
-#velocity .move{
-    color: blue;
-}
+/* end of rpm bar styles*/
 
 
-#velocity #value{
-    font-family: Abel;
-    font-size: 2vw;
-    position:absolute;
-    top: 7vw;
-    left: 7vw;
-    width: 50px;
-    height: 50px;
-}
-#engineTemp{
-    position:absolute;
-    overflow: hidden;
-    background-color: black;
-    color: white;
-    height: 20vw;
-    width: 20vw;
-    position: relative;
-    margin-left: 2vw;
-}
 
+/*tps bar styles*/
 
-#engineTemp #value{
-    font-family: Abel;
-    font-size: 2vw;
-    position:absolute;
-    top: 7vw;
-    left: 7vw;
-    width: 50px;
-    height: 50px;
-}
-
-#engineTemp .gauge{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 20vw;
-    height: 20vw;
-}
-#engineTemp .move{
-    color: red;
-
-}
 #tps{
     background-color: black;
     width: 8vw;
     height: 35vw;
+    grid-column: 1/2;
+    grid-row: 2/6;
 }
 #tps #tpsbar{
     
@@ -314,54 +174,138 @@ body{
     font-size: 3vw;
 }
 
-#bottom #center #gear{
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 4;
+/*end of tps bar styles*/
+
+/*timing meter style*/
+
+#timing{
+    
+    padding: 1vw;
+    border: solid white 0.25vw;
+    margin: 0.5vw;
+    grid-column: 2/4;
+    grid-row: 2/3;
 }
-#bottom #center #timing{
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
+#timingValue{
+    font-size: 6vw;
 }
-#bottom #center #delta{
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 4;
+/*end of timing meter style*/
+
+/*last lap meter*/
+
+#last{
+    padding: 0.5vw;
+    border: solid white 0.25vw;
+    margin: 0.5vw;
+    grid-column:3 /4 ;
+    grid-row: 3/ 4;
 }
 
-#bottom #center #lambda {
+/*end of last lap meter*/
+
+/*best lap meter*/
+
+#best{
+    padding: 0.5vw;
+    border: solid white 0.25vw;
+    margin: 0.5vw;
+    grid-column: 3/ 4;
+    grid-row: 4/ 5;
+}
+
+/*end of best lap meter*/
+
+
+/* delta meter*/
+
+#delta{
+    grid-column: 2/ 3;
+    grid-row: 3/ 5;
+    display: flex;
     flex-direction: column;
-    justify-content: end;
-    position: relative;
-    background-image: url("/img/lambda2.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    grid-column: 3/4;
-    grid-row: 4/ 6;
+    justify-content: center;
+    padding: 0.5vw;
+    border: solid white 0.25vw;
+    margin: 0.5vw;
+}
+#delta #deltaValue{
+    color: red;
+    font-size: 6vw;
+}
+/* end of delta meter*/
+
+/*gear indicator styles*/
+
+#gear{
+    grid-column: 4/5;
+    grid-row: 2/5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5vw;
+    border: solid white 0.25vw;
+    margin: 0.5vw;
 }
 
-#bottom #center #value{
-    font-size: 5vw;
+
+
+#gear #gearValue{
+    color: white;
+    font-size: 10vw;
 }
-#bottom #center #oilPressure{
-    grid-column: 1 / 3;
-    grid-row: 4 / 5;
+
+/*end of gear indicator styles*/
+
+/*velocity meter styles*/
+
+#velocity{
+    grid-column: 5/6;
+    grid-row: 2/5;
+    position: absolute;
+    right: 0px;
+    overflow: hidden;
+    background-color: black;
+    color: white;
+    height: 20vw;
+    width: 20vw;
+    position: relative;
+    margin-left: 2vw;
+}
+
+#velocity .gauge{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20vw;
+    height: 20vw;
+
+}
+
+#velocity .move{
+    color: blue;
+}
+
+
+#velocity #value{
+    font-family: Abel;
+    font-size: 2vw;
+    position:absolute;
+    top: 7vw;
+    left: 7vw;
+    width: 50px;
+    height: 50px;
+}
+
+/*end of velocity meter styles*/
+
+/*oil pressure meter styles*/
+
+#oilPressure{
+    grid-column: 2 / 4;
+    grid-row: 5 / 7;
     font-size: 2.5vw;
     display: grid;
     grid-template-columns: 32.5% 32.5% 35%;
-    grid-template-rows: 2vw 1fr;
-}
-#bottom #center #fuelqtd{
-    grid-column:1/ 3;
-    grid-row: 5 /6;
-    font-size: 2.5 vw;
-    display: grid;
-    grid-template-columns: 65% 35%;
     grid-template-rows: 2vw 1fr;
 }
 #oilPressureScale{
@@ -376,28 +320,10 @@ body{
     grid-row: 2/ 3;
 
 }
-#fuelqtdScale{
-    padding:1.5vw;
-    background-image: url("/img/scale.png");
-
-    aspect-ratio: 4/1;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: bottom left;
-    grid-column: 1/ 2;
-    grid-row: 2/ 3;
-
-}
 #oilPressureBar{
     height: 100%;
     background-color: white;
 }
-#fuelqtdBar{
-    
-    height: 100%;
-    background-color: white;
-}
-
 #oilPressureLabel{
     grid-column: 1 /2;
     grid-row: 1/ 2;
@@ -413,6 +339,55 @@ body{
 
     font-size: 6vw;
 }
+#oilPressure h6{
+    grid-column: 2/3;
+}
+
+#oilValue{
+    grid-column: 3/4;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    
+}
+#oilPressureWarning{
+    color:red;
+}
+
+
+/*end of oil pressure meter styles*/
+
+/*fuel meter styles*/
+
+#fuelqtd{
+    grid-column:2/ 4;
+    grid-row: 7 /8;
+    font-size: 2.5 vw;
+    display: grid;
+    grid-template-columns: 65% 35%;
+    grid-template-rows: 2vw 1fr;
+}
+
+#fuelqtdScale{
+    padding:1.5vw;
+    background-image: url("/img/scale.png");
+
+    aspect-ratio: 4/1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    grid-column: 1/ 2;
+    grid-row: 2/ 3;
+
+}
+
+#fuelqtdBar{
+    
+    height: 100%;
+    background-color: white;
+}
+
+
 
 #fuelqtdLabel{
 
@@ -428,17 +403,7 @@ body{
     
     grid-column: 2/3;
 }
-#oilPressure h6{
-    grid-column: 2/3;
-}
 
-#oilValue{
-    grid-column: 3/4;
-    grid-row: 2/3;
-    display: grid;
-    grid-template-columns: 80% 20%;
-    
-}
 
 #fuelValue{
     
@@ -448,10 +413,79 @@ body{
     grid-template-columns: 80% 20%;
     
 }
+
+/*end of fuel meter styles*/
+
+
+/*lambda meter styles*/
+
+#lambda {
+    flex-direction: column;
+    justify-content: end;
+    position: relative;
+    background-image: url("/img/lambda2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    grid-column: 4/5;
+    grid-row: 5/ 8;
+}
+
+/*end of lambda meter styles*/
+
+
+/*engine temperature styles*/
+
+#engineTemp{
+    grid-column: 5/6;
+    grid-row: 5/8;
+    position:absolute;
+    overflow: hidden;
+    background-color: black;
+    color: white;
+    height: 20vw;
+    width: 20vw;
+    position: relative;
+    margin-left: 2vw;
+}
+
+
+#engineTemp #value{
+    font-family: Abel;
+    font-size: 2vw;
+    position:absolute;
+    top: 7vw;
+    left: 7vw;
+    width: 50px;
+    height: 50px;
+}
+
+#engineTemp .gauge{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20vw;
+    height: 20vw;
+}
+#engineTemp .move{
+    color: red;
+
+}
+
+/*end of engine temperature styles*/
+
+
+
+ 
 .warning{
     color: red;
 }
 
-#oilPressureWarning{
-    color:red;
+.splitter{
+    height: 0.5vw;
+    width: 10vw;
+    background-color: white;
+    border: none;
 }
+
+

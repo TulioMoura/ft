@@ -11,141 +11,134 @@
 
 <body>
     <!-- criar a shiftbar e o rpm counter -->
-    <div id="top">
-
-        <div id="rpm">
-            <div id="rpmgauge">
-                <div id="shiftbar">
-                    <h4>SHIFT&nbsp</h4>
-                </div>
-                <div id="scale">
-                    <div id="step">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span class="redline"></span>
-                        <span class="redline"></span>
-                    </div>
-                    <div id="values">
-                        0
-                        <span>1</span>
-                        <span>2</span>
-                        <span>3</span>
-                        <span>4</span>
-                        <span>5</span>
-                        <span>6</span>
-                        <span>7</span>
-                        <span>8</span>
-                        <span class="redline">9</span>
-                        <span class="redline">10</span>
-                    </div>
-
-
-                </div>
+    <div id="rpm">
+        <div id="rpmgauge">
+            <div id="shiftbar">
+                <h4>SHIFT&nbsp</h4>
             </div>
-            <div id="rpmcounter">
-                <h1>7053</h1>
-                <h6>RPM</h6>
-            </div>
+            <div id="scale">
+                <div id="step">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span class="redline"></span>
+                    <span class="redline"></span>
+                </div>
+                <div id="values">
+                    0
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                    <span>6</span>
+                    <span>7</span>
+                    <span>8</span>
+                    <span class="redline">9</span>
+                    <span class="redline">10</span>
+                </div>
 
+
+            </div>
         </div>
+        <div id="rpmcounter">
+            <h1>7053</h1>
+            <h6>RPM</h6>
+        </div>
+
     </div>
-    <div id="bottom">
-        <div id="left">
-            <div id="tps">
-                <div id="tpsbar">
-                    <div id="scale">
-                        <div id="tophalf">&nbsp</div>
-                        <div id="bottomhalf">&nbsp</div>
-                    </div>
-                    <div id="tpsmeter"></div>
-                </div>
-                <div id="value">
-                    <h1 id="tpsBarPercent">100%</h1>
-                    TPS
-                </div>
-
+    <div id="tps">
+        <div id="tpsbar">
+            <div id="scale">
+                <div id="tophalf">&nbsp</div>
+                <div id="bottomhalf">&nbsp</div>
             </div>
+            <div id="tpsmeter"></div>
         </div>
-        <div id="center">
-            <div id="timing"> timing <div id="timingValue">8:88,88</div>
-            </div>
-            <div id="delta">delta <div class="splitter"></div>
-                <div id="deltaValue">+0,23</div>
-            </div>
-            <div id="last">last <div id="lastLapValue">8:88,88</div>
-            </div>
-            <div id="best">best <div id="bestLapValue">8:88,88</div>
-            </div>
-            <div id="gear">gear <div class="splitter"></div>
-                <div id="gearValue">6</div>
-            </div>
-            <div id="oilPressure">
-                <p id="oilPressureLabel">oil. press.</p>
-                <p id="oilPressureWarning" >⚠</p>
-                <div id="oilPressureScale">
-                    <div id="oilPressureBar">
-                </div>
-                </div>
-                <div id="oilValue">
-                <p id="oilPressureValue"></p>
-                <h6>bar</h6>
-                </div>
-            </div> 
-            <div id="fuelqtd">
-                <p id="fuelqtdLabel">Fuel</p>
-                <div id="fuelqtdScale">
-                    <div id="fuelqtdBar">
-                </div>
-                </div>
-                <div id="fuelValue">
-                    <p id="fuelqtdValue"></p>
-                <h6>km</h6>
-                </div>
-                
-                
-            </div>
-            <div id="lambda">
-                
-                <p id="LambdaValueField">0.88</p>
-                <p>λ</p>
-                <p>O2</p>
-            </div> 
+        <div id="value">
+            <h1 id="tpsBarPercent">100%</h1>
+            TPS
         </div>
 
-        <div id="rigth">
-            <div id="velocity">
-                <img src="/img/bt_blue.png" class="gauge move">
-                <img src="/img/bt_blue.png" class="gauge move">
-                <img src="/img/bt_blue.png" class="gauge move">
-                <img src="/img/bt_black2.png" class="gauge ">
-                <div id="value">
-                    <h1>122</h1>
-                    <h3>km/h</h3>
-                </div>
-
-            </div>
-            <div id="engineTemp">
-                <img src="/img/bt_red.png" class="gauge move">
-                <img src="/img/bt_red.png" class="gauge move">
-                <img src="/img/bt_red.png" class="gauge move">
-                <img src="/img/bt_black2.png" class="gauge ">
-                <div id="value">
-                    <h1>122</h1>
-                    <h3>C°</h3>
-                </div>
-
-            </div>
-            
-        </div>
-       
+    </div>
+    <div id="timing"> timing <div id="timingValue">8:88,88</div>
+    </div>
+    <div id="delta">delta
+        <div class="splitter"></div>
+        <div id="deltaValue">+0,23</div>
+    </div>
+    <div id="last">last
+        <div id="lastLapValue">8:88,88</div>
+    </div>
+    <div id="best">best
+        <div id="bestLapValue">8:88,88</div>
+    </div>
+    <div id="gear">gear
+        <div class="splitter"></div>
+        <div id="gearValue">6</div>
     </div>
 
+    <div id="oilPressure">
+        <p id="oilPressureLabel">oil. press.</p>
+        <p id="oilPressureWarning">⚠</p>
+        <div id="oilPressureScale">
+            <div id="oilPressureBar">
+            </div>
+        </div>
+        <div id="oilValue">
+            <p id="oilPressureValue"></p>
+            <h6>bar</h6>
+        </div>
+    </div>
+
+    <div id="fuelqtd">
+        <p id="fuelqtdLabel">Fuel</p>
+        <div id="fuelqtdScale">
+            <div id="fuelqtdBar">
+            </div>
+        </div>
+        <div id="fuelValue">
+            <p id="fuelqtdValue"></p>
+            <h6>km</h6>
+        </div>
+
+
+    </div>
+    <div id="lambda">
+
+        <p id="LambdaValueField">0.88</p>
+        <p>λ</p>
+        <p>O2</p>
+    </div>
+
+
+    <div id="velocity">
+        <img src="/img/bt_blue.png" class="gauge move">
+        <img src="/img/bt_blue.png" class="gauge move">
+        <img src="/img/bt_blue.png" class="gauge move">
+        <img src="/img/bt_black2.png" class="gauge ">
+        <div id="value">
+            <h1>122</h1>
+            <h3>km/h</h3>
+        </div>
+
+    </div>
+    <div id="engineTemp">
+        <img src="/img/bt_red.png" class="gauge move">
+        <img src="/img/bt_red.png" class="gauge move">
+        <img src="/img/bt_red.png" class="gauge move">
+        <img src="/img/bt_black2.png" class="gauge ">
+        <div id="value">
+            <h1>122</h1>
+            <h3>C°</h3>
+        </div>
+
+    </div>
 
     <script src="velocity.js"></script>
 
