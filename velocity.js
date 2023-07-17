@@ -81,23 +81,23 @@ function updateLambdaValue(lambda){
     }
     else{
         if(lambda < min_limit + step){
-            meter.setAttribute("style", "background-image:url('/img/lambda0.png');")
+            meter.setAttribute("style", "background-image:url('/docs/assets/images/lambda0.png');")
             console.log(step)
         }
         else if((lambda < (min_limit + (step * 2))) && (lambda > (min_limit + step))){
-            meter.setAttribute("style", "background-image:url('/img/lambda1.png');")
+            meter.setAttribute("style", "background-image:url('/docs/assets/images/lambda1.png');")
             console.log(step)
         }
         else if((lambda < (min_limit + (step * 3))) && (lambda > (min_limit + (step * 2)))){
-            meter.setAttribute("style", "background-image:url('/img/lambda2.png');")
+            meter.setAttribute("style", "background-image:url('/docs/assets/images/lambda2.png');")
             console.log(step)
         }
         else if((lambda < (min_limit + (step * 4))) && (lambda > (min_limit + (step * 3)))){
-            meter.setAttribute("style", "background-image:url('/img/lambda3.png');")
+            meter.setAttribute("style", "background-image:url('/docs/assets/images/lambda3.png');")
             console.log(step)
         }
         else if(lambda > (min_limit +(step*4))){
-            meter.setAttribute("style", "background-image:url('/img/lambda4.png');")
+            meter.setAttribute("style", "background-image:url('/docs/assets/images/lambda4.png');")
             console.log(step)
         }
         console.log(lambda)
