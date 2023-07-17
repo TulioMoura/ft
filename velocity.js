@@ -39,7 +39,7 @@ function updateRpmBar(rpm) {
     if (typeof (rpm) != 'number') {
         return ("Invalid parameter Value")
     }
-    barPercent = 99 / 10000 * rpm
+    barPercent = 98.25 / 10000 * rpm
     rpmValue = document.getElementById("rpmcounter").getElementsByTagName("h1")[0]
     rpmValue.innerText = rpm
     document.getElementById("shiftbar").setAttribute("style", `width:${barPercent}%;`)
