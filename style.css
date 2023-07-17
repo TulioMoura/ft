@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'Abel';
-    src: url(/docs/assets/fonts/Abel/Abel-Regular.ttf);
+    src: url(./docs/assets/fonts/Abel/Abel-Regular.ttf);
 }
 
 
@@ -43,7 +43,7 @@ body{
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
-    background-image: url("/docs/assets/images/rpmScale.png");
+    background-image: url("./docs/assets/images/rpmScale.png");
 }
 
 #rpm #rpmgauge #shiftbar{
@@ -256,7 +256,7 @@ body{
 }
 #oilPressureScale{
     padding:1.5vw;
-    background-image: url("/docs/assets/images/scale.png");
+    background-image: url("./docs/assets/images/scale.png");
 
     aspect-ratio: 4/1;
     background-size: contain;
@@ -316,7 +316,7 @@ body{
 
 #fuelqtdScale{
     padding:1.5vw;
-    background-image: url("/docs/assets/images/scale.png");
+    background-image: url("./docs/assets/images/scale.png");
 
     aspect-ratio: 4/1;
     background-size: contain;
@@ -369,7 +369,7 @@ body{
     flex-direction: column;
     justify-content: end;
     position: relative;
-    background-image: url("/docs/assets/images/lambda2.png");
+    background-image: url("./docs/assets/images/lambda2.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
