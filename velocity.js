@@ -1,3 +1,42 @@
+var websocket = new WebSocket("ws://192.168.3.90:8083")
+
+websocket.onopen = ()=>{
+    console.log("Conexão efetuada");
+    websocket.send("START_SEND_FLAG");
+
+}
+
+websocket.onmessage =(message)=>{
+    //console.log(message.data);
+    
+    data = JSON.parse(message.data)
+        let {throttle, fuel, gear, rpms, speedKph}= data;
+        throttle = Math.floor(Number(throttle))
+        fuel = Math.floor(Number(fuel));
+        gear = Math.floor(Number(gear));
+        rpms = Math.floor(Number(rpms))
+        speedKph = Math.floor(Number(speedKph))
+        updateSpeedGauge(speedKph);
+        updateTpsBar(throttle)
+        updateFuelQtd(fuel)
+        updateRpmBar(rpms)
+        updateGearGauge(gear)
+        //console.log(throttle, fuel, gear,rpms,speedKph)
+}
+
+websocket.onclose = (e)=>{
+    if(e.wasClean){
+        console.log("connection closed")
+    }
+    else{
+        console.log("connection died")
+    }
+} 
+
+websocket.onerror = (error)=>{
+    console.log(error)
+} 
+
 function updateSpeedGauge(speed) {
     if (typeof (speed) != 'number') {
         return ("Invalid parameter Value")
@@ -146,7 +185,7 @@ function updateFuelQtd(qtd,consumption){
     value = document.getElementById("fuelValue")
 
     field.innerText = Math.floor(qtd * consumption)
-    console.log(perc)
+    //console.log(perc)
     if(perc < 10 ){
         bar.setAttribute("style", ` width: ${perc}%; background-color: #ff0000; `)
         value.setAttribute("class","warning")
@@ -157,11 +196,22 @@ function updateFuelQtd(qtd,consumption){
     }
 }
 
-//setInterval(tofullthrottle,50)]
-updateFuelQtd(4,11.4)
-updateOilPressure(400)
-updateLambdaValue(0.75)
-updateTpsBar(75)
-updateRpmBar(10000)
-updateSpeedGauge(152)
-updateEngineTempGauge(98)
+
+function updateGearGauge(gear){
+    if(gear < -1 && gear > 10){
+        return ("out of range")
+    }
+    value = document.getElementById("gearValue")
+    if(gear > 0 && gear < 10 ){
+         value.innerText = gear
+    }
+    else if(gear == 0){
+        value.innerText ="N"
+    }
+    else if(gear == -1){
+        value.innerText = R
+    }
+   
+}
+
+

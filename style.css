@@ -17,17 +17,15 @@ body{
     background-color: black;
     display: grid;
     color: white;
-    width: 100vw;
     aspect-ratio: 16/9;
     grid-template-columns: 10fr 30fr 30fr 25fr 25fr;
-    grid-template-rows: 30fr 15fr 12.5fr 12.5fr 7.5fr 7.5fr 15fr;
+    grid-template-rows: 30fr 1fr 10fr 10fr 7.5fr 7.5fr 15fr;
 }
 
 
 /* rpm bar styles */
 
 #rpm{
-    height: 100%;
     padding: 0.25rem;
     display: flex;
     flex-direction: row;
