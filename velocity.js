@@ -202,14 +202,14 @@ function updateGearGauge(gear){
         return ("out of range")
     }
     value = document.getElementById("gearValue")
-    if(gear > 0 && gear < 10 ){
-         value.innerText = gear
+    if(gear > 2 && gear < 10 ){
+         value.innerText = gear-1
     }
-    else if(gear == 0){
+    else if(gear == 1){
         value.innerText ="N"
     }
-    else if(gear == -1){
-        value.innerText = R
+    else if(gear == 0){
+        value.innerText = "R"
     }
    
 }
