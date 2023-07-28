@@ -1,4 +1,4 @@
-var websocket = new WebSocket("ws://192.168.3.90:8083")
+var websocket = new WebSocket("ws://localhost:8083")
 
 websocket.onopen = ()=>{
     console.log("Conexão efetuada");
