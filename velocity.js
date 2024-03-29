@@ -1,14 +1,26 @@
 let address
+var websocket
 
-window.prompt("Endereço do servidor:", address)
+let serverInput = document.getElementById("serverInput")
+let inputForm = document.getElementById("inputForm")
+let dash = document.getElementById("painel")
+inputForm.addEventListener("submit", (e)=>{
+    e.preventDefault()
+    console.log(e.target[0].value)
+    let address = e.target[0].value
+    matchedAddr = address.match("(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)")
+    address = matchedAddr[0];
 
-var websocket = new WebSocket(`ws://${address}:8083`)
-
-websocket.onopen = ()=>{
+    connect(address)
+    
+}
+)
+function connect(addr){
+    websocket = new WebSocket(`ws://${addr}:8083`)
+    websocket.onopen = ()=>{
     console.log("Conexão efetuada");
     websocket.send("START_SEND_FLAG");
-
-}
+    }
 
 websocket.onmessage =(message)=>{
     //console.log(message.data);
@@ -40,6 +52,13 @@ websocket.onclose = (e)=>{
 websocket.onerror = (error)=>{
     console.log(error)
 } 
+
+return true;
+}
+
+
+
+
 
 function updateSpeedGauge(speed) {
     if (typeof (speed) != 'number') {
@@ -217,5 +236,3 @@ function updateGearGauge(gear){
     }
    
 }
-
-
