@@ -1,4 +1,8 @@
-var websocket = new WebSocket("ws://localhost:8083")
+let address
+
+window.prompt("Endereço do servidor:", address)
+
+var websocket = new WebSocket(`ws://${address}:8083`)
 
 websocket.onopen = ()=>{
     console.log("Conexão efetuada");
